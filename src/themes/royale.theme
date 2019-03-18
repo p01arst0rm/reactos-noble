@@ -2,7 +2,7 @@
 ; just placeholder info for now. disregard.
 
 [Theme]
-DisplayName=Modern
+DisplayName=Royale
 [CLSID\{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX}\DefaultIcon]
 DefaultValue=%WinDir%explorer.exe,0
 [CLSID\{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX}\DefaultIcon]
@@ -31,7 +31,7 @@ WallpaperStyle=2
 Pattern=(none)
 ScreenSaveActive=1
 [VisualStyles]
-Path=%ResourceDir%\Themes\modern\modern.msstyles
+Path=%ResourceDir%\Themes\royale\royale.msstyles
 ColorStyle = NormalColor
 Size = NormalSize
 [boot]

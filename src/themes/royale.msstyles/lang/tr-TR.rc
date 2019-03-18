@@ -10,8 +10,8 @@ STRINGTABLE
 
 STRINGTABLE
 {
-2000, "Aydınlık Modern"
-2001, "Koyu Modern"
+2000, "Aydınlık Royale"
+2001, "Koyu Royale"
 }
 
 STRINGTABLE
@@ -30,10 +30,10 @@ STRINGTABLE
 
 STRINGTABLE
 {
-5000, "Modern"
+5000, "Royale"
 5001, "Görsel Biçim"
 5002, "ReactOS Vakfı"
-5003, "Polar, Win10 tabanlı"
+5003, "Polar, winXP tabanlı"
 5004, "GNU/GPL 3.0 altında yayımlanmıştır, 2018"
 5005, "http://www.reactos.org"
 5006, "1.0"

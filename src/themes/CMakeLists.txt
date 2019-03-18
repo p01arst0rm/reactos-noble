@@ -1,1 +1,1 @@
-add_subdirectory(modern.msstyles)
+add_subdirectory(royale.msstyles)

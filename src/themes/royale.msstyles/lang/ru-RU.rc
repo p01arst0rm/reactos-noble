@@ -8,8 +8,8 @@ STRINGTABLE
 
 STRINGTABLE
 {
-2000, "Modern светлый"
-2001, "Modern тёмный"
+2000, "Royale светлый"
+2001, "Royale тёмный"
 }
 
 STRINGTABLE
@@ -28,10 +28,10 @@ STRINGTABLE
 
 STRINGTABLE
 {
-5000, "Modern"
+5000, "Royale"
 5001, "Визуальный Стиль"
 5002, "Команда ReactOS"
-5003, "Polar, основан на win10"
+5003, "Polar, основан на winXP"
 5004, "Выпущен под GNU/GPL 3.0, 2018"
 5005, "http://www.reactos.org"
 5006, "1.0"
