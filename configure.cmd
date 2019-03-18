@@ -16,7 +16,6 @@ exit /B 0
 
 :main (
 	call :mk_bin
-	call :mk_wallpaper
 	call :mk_theme
 	exit /B 0
 )
@@ -26,38 +25,14 @@ exit /B 0
     mkdir "%_prefix%"
     mkdir "%_prefix%\media"
     mkdir "%_prefix%\media\themes"
-    mkdir "%_prefix%\media\themes\modern.msstyles"
-	mkdir "%_prefix%\media\themes\modern.msstyles\lang"
-	mkdir "%_prefix%\media\themes\modern.msstyles\textfiles"
-	mkdir "%_prefix%\media\themes\modern.msstyles\bitmaps"
-	mkdir "%_prefix%\media\themes\modern.msstyles\bitmaps\Light"
-	mkdir "%_prefix%\media\themes\modern.msstyles\bitmaps\Dark"
+    mkdir "%_prefix%\media\themes\royale.msstyles"
+	mkdir "%_prefix%\media\themes\royale.msstyles\lang"
+	mkdir "%_prefix%\media\themes\royale.msstyles\textfiles"
+	mkdir "%_prefix%\media\themes\royale.msstyles\bitmaps"
+	mkdir "%_prefix%\media\themes\royale.msstyles\bitmaps\Light"
+	mkdir "%_prefix%\media\themes\royale.msstyles\bitmaps\Dark"
    
-   	echo [+] creating wallpaper directory tree..
-    mkdir "%_prefix%\modules"
-    mkdir "%_prefix%\modules\wallpapers"
-    mkdir "%_prefix%\modules\wallpapers\Silhouette"
     exit /B 0
-)
-
-:mk_wallpaper (
-	echo [x] building theme wallpapers...
-	call "%_dir%\scripts\tif2png.cmd" ^
-	"%_dir%\src\wallpapers\Silhouette\", ^
-	"%_prefix%\modules\wallpapers\Silhouette\"
-
-	echo [+] copying LICENSE for theme wallpapers....
-	copy "%_dir%\src\wallpapers\LICENSE" ^
-	"%_prefix%\modules\wallpapers\Silhouette\"
-
-	echo [+] copying Theme wallpapers CMakeLists.txt....
-	copy "%_dir%\src\wallpapers\Silhouette\CMakeLists.txt" ^
-	"%_prefix%\modules\wallpapers\Silhouette\CMakeLists.txt"
-
-	echo [+] updating reactos wallpapers CMake....
-	type "%_dir%\src\wallpapers\CMakeLists.txt" ^
-	>> "%_prefix%\modules\wallpapers\CMakeLists.txt"
-	exit /B 0
 )
 
 :mk_theme (
@@ -67,16 +42,16 @@ exit /B 0
 	call :mk_theme_textfiles	
 
 	echo [+] copying LICENSE for theme....
-	copy "%_dir%\src\themes\modern.msstyles\LICENSE" ^
-	"%_prefix%\media\themes\modern.msstyles\LICENSE"
+	copy "%_dir%\src\themes\royale.msstyles\LICENSE" ^
+	"%_prefix%\media\themes\royale.msstyles\LICENSE"
 	
 	echo [+] copying theme CMakeLists.txt....
-	copy "%_dir%\src\themes\modern.msstyles\CMakeLists.txt" ^
-	"%_prefix%\media\themes\modern.msstyles\CMakeLists.txt"
+	copy "%_dir%\src\themes\royale.msstyles\CMakeLists.txt" ^
+	"%_prefix%\media\themes\royale.msstyles\CMakeLists.txt"
 	
 	echo [+] copying theme rc....
-	copy "%_dir%\src\themes\modern.msstyles\modern.rc" ^
-	"%_prefix%\media\themes\modern.msstyles\modern.rc"
+	copy "%_dir%\src\themes\royale.msstyles\royale.rc" ^
+	"%_prefix%\media\themes\royale.msstyles\royale.rc"
 	
 	echo [+] updating reactos theme CMake....
 	type "%_dir%\src\wallpapers\CMakeLists.txt" ^
@@ -91,8 +66,8 @@ exit /B 0
 		if "%response%"==%%q (
 			echo [+] building Light theme bitmaps....
 			call "%_dir%\scripts\tif2bmp.cmd" ^
-			"%_dir%\src\themes\modern.msstyles\bitmaps\Light\" ^
-			"%_prefix%\media\themes\modern.msstyles\bitmaps\Light\"
+			"%_dir%\src\themes\royale.msstyles\bitmaps\Light\" ^
+			"%_prefix%\media\themes\royale.msstyles\bitmaps\Light\"
 			exit /B 0
 		)
 	)
@@ -112,8 +87,8 @@ exit /B 0
 		if "%response%"==%%q (
 			echo [+] building Dark theme bitmaps....
 			call "%_dir%\scripts\tif2bmp.cmd" ^
-			"%_dir%\src\themes\modern.msstyles\bitmaps\Dark\" ^
-			"%_prefix%\media\themes\modern.msstyles\bitmaps\Dark\"
+			"%_dir%\src\themes\royale.msstyles\bitmaps\Dark\" ^
+			"%_prefix%\media\themes\royale.msstyles\bitmaps\Dark\"
 			exit /B 0
 		)
 	)
@@ -128,14 +103,14 @@ exit /B 0
 
 :mk_lang (
 	echo [+] copying theme language files..
-	xcopy "%_dir%\src\themes\modern.msstyles\lang\*" ^
-	"%_prefix%\media\themes\modern.msstyles\lang\"
+	xcopy "%_dir%\src\themes\royale.msstyles\lang\*" ^
+	"%_prefix%\media\themes\royale.msstyles\lang\"
 	exit /B 0
 )
 
 :mk_theme_textfiles (
 	echo [+] copying theme textfiles....
-	xcopy "%_dir%\src\themes\modern.msstyles\textfiles\*" ^
-	"%_prefix%\media\themes\modern.msstyles\textfiles\*" /s
+	xcopy "%_dir%\src\themes\royale.msstyles\textfiles\*" ^
+	"%_prefix%\media\themes\royale.msstyles\textfiles\*" /s
 	exit /B 0
 )
