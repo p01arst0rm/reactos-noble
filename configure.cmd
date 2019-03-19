@@ -1,5 +1,5 @@
 @echo off
-rem make script for ReactOS Modern theme
+rem make script for ReactOS Royale theme
 rem ------------------------------------------------------
 
 setlocal EnableDelayedExpansion
