@@ -2,7 +2,7 @@
 ; just placeholder info for now. disregard.
 
 [Theme]
-DisplayName=Royale
+DisplayName=Noble
 [CLSID\{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX}\DefaultIcon]
 DefaultValue=%WinDir%explorer.exe,0
 [CLSID\{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX}\DefaultIcon]
