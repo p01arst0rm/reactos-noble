@@ -1,5 +1,5 @@
 @echo off
-rem make script for ReactOS Royale theme
+rem make script for ReactOS Noble theme
 rem ------------------------------------------------------
 
 setlocal EnableDelayedExpansion
@@ -25,12 +25,12 @@ exit /B 0
     mkdir "%_prefix%"
     mkdir "%_prefix%\media"
     mkdir "%_prefix%\media\themes"
-    mkdir "%_prefix%\media\themes\royale.msstyles"
-	mkdir "%_prefix%\media\themes\royale.msstyles\lang"
-	mkdir "%_prefix%\media\themes\royale.msstyles\textfiles"
-	mkdir "%_prefix%\media\themes\royale.msstyles\bitmaps"
-	mkdir "%_prefix%\media\themes\royale.msstyles\bitmaps\Light"
-	mkdir "%_prefix%\media\themes\royale.msstyles\bitmaps\Dark"
+    mkdir "%_prefix%\media\themes\noble.msstyles"
+	mkdir "%_prefix%\media\themes\noble.msstyles\lang"
+	mkdir "%_prefix%\media\themes\noble.msstyles\textfiles"
+	mkdir "%_prefix%\media\themes\noble.msstyles\bitmaps"
+	mkdir "%_prefix%\media\themes\noble.msstyles\bitmaps\Light"
+	mkdir "%_prefix%\media\themes\noble.msstyles\bitmaps\Dark"
    
     exit /B 0
 )
@@ -42,16 +42,16 @@ exit /B 0
 	call :mk_theme_textfiles	
 
 	echo [+] copying LICENSE for theme....
-	copy "%_dir%\src\themes\royale.msstyles\LICENSE" ^
-	"%_prefix%\media\themes\royale.msstyles\LICENSE"
+	copy "%_dir%\src\themes\noble.msstyles\LICENSE" ^
+	"%_prefix%\media\themes\noble.msstyles\LICENSE"
 	
 	echo [+] copying theme CMakeLists.txt....
-	copy "%_dir%\src\themes\royale.msstyles\CMakeLists.txt" ^
-	"%_prefix%\media\themes\royale.msstyles\CMakeLists.txt"
+	copy "%_dir%\src\themes\noble.msstyles\CMakeLists.txt" ^
+	"%_prefix%\media\themes\noble.msstyles\CMakeLists.txt"
 	
 	echo [+] copying theme rc....
-	copy "%_dir%\src\themes\royale.msstyles\royale.rc" ^
-	"%_prefix%\media\themes\royale.msstyles\royale.rc"
+	copy "%_dir%\src\themes\noble.msstyles\noble.rc" ^
+	"%_prefix%\media\themes\noble.msstyles\noble.rc"
 	
 	echo [+] updating reactos theme CMake....
 	type "%_dir%\src\wallpapers\CMakeLists.txt" ^
@@ -66,8 +66,8 @@ exit /B 0
 		if "%response%"==%%q (
 			echo [+] building Light theme bitmaps....
 			call "%_dir%\scripts\tif2bmp.cmd" ^
-			"%_dir%\src\themes\royale.msstyles\bitmaps\Light\" ^
-			"%_prefix%\media\themes\royale.msstyles\bitmaps\Light\"
+			"%_dir%\src\themes\noble.msstyles\bitmaps\Light\" ^
+			"%_prefix%\media\themes\noble.msstyles\bitmaps\Light\"
 			exit /B 0
 		)
 	)
@@ -80,15 +80,14 @@ exit /B 0
 	goto :mk_bitmaps_light
 )
 
-
 :mk_bitmaps_dark (
 	set /p response="[+] build Dark theme bitmaps? (Y/N): "
 	for %%q in ("Y" "y") do (
 		if "%response%"==%%q (
 			echo [+] building Dark theme bitmaps....
 			call "%_dir%\scripts\tif2bmp.cmd" ^
-			"%_dir%\src\themes\royale.msstyles\bitmaps\Dark\" ^
-			"%_prefix%\media\themes\royale.msstyles\bitmaps\Dark\"
+			"%_dir%\src\themes\noble.msstyles\bitmaps\Dark\" ^
+			"%_prefix%\media\themes\noble.msstyles\bitmaps\Dark\"
 			exit /B 0
 		)
 	)
@@ -103,14 +102,14 @@ exit /B 0
 
 :mk_lang (
 	echo [+] copying theme language files..
-	xcopy "%_dir%\src\themes\royale.msstyles\lang\*" ^
-	"%_prefix%\media\themes\royale.msstyles\lang\"
+	xcopy "%_dir%\src\themes\noble.msstyles\lang\*" ^
+	"%_prefix%\media\themes\noble.msstyles\lang\"
 	exit /B 0
 )
 
 :mk_theme_textfiles (
 	echo [+] copying theme textfiles....
-	xcopy "%_dir%\src\themes\royale.msstyles\textfiles\*" ^
-	"%_prefix%\media\themes\royale.msstyles\textfiles\*" /s
+	xcopy "%_dir%\src\themes\noble.msstyles\textfiles\*" ^
+	"%_prefix%\media\themes\noble.msstyles\textfiles\*" /s
 	exit /B 0
 )
