@@ -31,7 +31,7 @@ WallpaperStyle=2
 Pattern=(none)
 ScreenSaveActive=1
 [VisualStyles]
-Path=%ResourceDir%\Themes\royale\royale.msstyles
+Path=%ResourceDir%\Themes\Noble\noble.msstyles
 ColorStyle = NormalColor
 Size = NormalSize
 [boot]
